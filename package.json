@@ -1,0 +1,24 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "```\r npm install -g typescript\r ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoonc01/TypeScript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yoonc01/TypeScript/issues"
+  },
+  "homepage": "https://github.com/yoonc01/TypeScript#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "typescript": "^5.7.3"
+  }
+}
