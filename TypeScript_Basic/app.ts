@@ -14,14 +14,17 @@ const result = add(number1, number2);
 console.log(result);
 
 // 객체 타입 정의
+// 타입은 추론하도록 하는 것이 좋긴 함
 const person: {
   name: string;
   age: number;
-  hobbies: string[];
+  hobbies: string[]; //Array
+  role: [number, string]; //Tuple
 } = {
   name: "hyoyoon",
   age: 7,
   hobbies: ["Sports", "Cooking"],
+  role: [2, "author"], // 타입을 정의하지 않고 이런 식으로 선언하여 TypeScript가 추론하게 하면 문자열과 숫자가 union된 배열로 이해하여 tuple로 사용할 수는 없다!
 };
 
 let favoriteActivities: string[];
