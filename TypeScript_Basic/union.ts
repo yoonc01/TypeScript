@@ -4,7 +4,22 @@ const number = 2.8;
 // 🔹 유니온 타입(Union Type): 여러 타입을 허용하는 타입스크립트 기능
 // number 또는 string 타입을 받을 수 있도록 설정
 // resultConversion은 literal 타입으로 선언하여 "as-number" 또는 "as-text"로만 사용 가능
-function combine(input1: number | string, input2: number | string, resultConversion: "as-number" | "as-text") {
+// union type을 하나하나 적는 것은 귀찮으니 type을 통해 alias 할 수 있다!
+type Combinable = number | string;
+type ConversionDescriptor = "as-number" | "as-text";
+
+// 이런 식으로 객체 타입에도 alias를 할 수 있다!
+type User = { name: string; age: number };
+ 
+function greet(user: User) {
+  console.log('Hi, I am ' + user.name);
+}
+ 
+function isOlder(user: User, checkAge: number) {
+  return checkAge > user.age;
+}
+
+function combine(input1: Combinable, input2: Combinable, resultConversion: ConversionDescriptor) {
     let result: number | string;
 
     // 🔹 타입 가드(Type Guard) 사용
