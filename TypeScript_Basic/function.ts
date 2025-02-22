@@ -43,3 +43,16 @@ let combineValues: (a: number, b: number) => number;
 
 combineValues = add;
 console.log(combineValues(1, 2));
+
+// callback type
+function addAndHandle(n1: number, n2:number, callback:(num: number) => void) {
+    const result = n1 + n2;
+    // void를 반환하는 것은 반환값으로 아무것도 하지 않겠다는 의미를 내포할 때 쓰기도 한다.\
+    // 그래서 밑의 예제에서 callback 함수가 return 값이 있어도 오류가 발생하지 않는다.
+    callback(result);
+}
+
+addAndHandle(10, 20, (result) => {
+    console.log(result);
+    return result;
+})
