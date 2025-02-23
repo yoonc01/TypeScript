@@ -56,3 +56,10 @@ addAndHandle(10, 20, (result) => {
     console.log(result);
     return result;
 })
+
+// error를 던지는 함수는 반환값을 절대 생성하지 않기에 never를 사용(명확성을 위해)
+function generateError(message: string, code: number) {
+    throw {message: message, errorCode: code};
+}
+
+generateError("An error occurred", 500);
