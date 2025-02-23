@@ -53,3 +53,10 @@ console.log(person.name);
 for (const hobby of person.hobbies) {
   console.log(hobby.toUpperCase()); // 자동 완성 기능이 정상 작동함
 }
+
+// 사용자가 어떤 값을 넣을지 모르기 때문에 unknown으로 설정
+let userInput: unknown;
+let userName: string;
+
+// userInput이 unknown일 떄는 에러를 표시하지만 any일때는 에러가 나지 않는다.
+//userName = userInput;
