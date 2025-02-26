@@ -89,6 +89,38 @@ npx tsc
 
 위 명령어를 실행하면 `tsconfig.json` 설정에 따라 JavaScript 파일(`index.js`)이 생성됩니다.
 
+### tsc 컴파일 대상 제외하기
+
+아래 내용을 tsconfig.json에 추가하기
+```json
+"exclude" : [
+  "targetFile.ts",
+  "*.dev.ts", // .dev.ts가 붙어 있는 파일들은 다 컴파일하지 않음
+  "node_modules" //default option! node_modules에 있는 ts는 컴파일할 필요가 없다...!
+]
+```
+
+### tsc 컴파일 대상 추가하기
+
+아래 내용을 tsconfig.json에 추가하기
+```json
+"include" : [
+  "targetFile.ts", //targetFile.ts만 컴파일됨!
+]
+```
+### tsconfig.json의 compilerOptions 알아보기
+
+- target: 어떤 버전으로 compile할지 알려줌(es5(let, const 없음)로 하면 구형 브라우저에서도 동작 가능)
+
+### Watch mode 실행
+```sh
+tsc -w
+```
+
+```sh
+tsc --watch
+```
+
 ### 실행 방법 (Node.js 사용)
 
 ```sh
