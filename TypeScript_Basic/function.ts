@@ -6,12 +6,12 @@
 //}
 
 // refer number
-function add(n1: number, n2: number) {
+function add1(n1: number, n2: number) {
     return n1 + n2;
 }
 
 // 명시적으로 반환 타입 설정 가능
-function add(n1: number, n2: number): number {
+function add2(n1: number, n2: number): number {
     return n1 + n2;
 }
 
@@ -20,7 +20,7 @@ function printResult(num: number) {
     console.log("Result: " + num);
 }
 
-printResult(add(1, 2));
+printResult(add1(1, 2));
 
 // return undefined or void
 // 그냥 void 쓰는 게...!
@@ -41,7 +41,7 @@ let combineValues: (a: number, b: number) => number;
 // 오류가 발생한다!
 // combineValues = printResult;
 
-combineValues = add;
+combineValues = add1;
 console.log(combineValues(1, 2));
 
 // callback type
