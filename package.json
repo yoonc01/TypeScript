@@ -19,6 +19,6 @@
   "homepage": "https://github.com/yoonc01/TypeScript#readme",
   "devDependencies": {
     "lite-server": "^2.6.1",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.2"
   }
 }
