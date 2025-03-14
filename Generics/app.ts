@@ -37,7 +37,8 @@ function mergeObject<T extends object, U extends object>(objA: T, objB: U) {
 }
 
 // 오류 발생
-const mergedObj3 = mergeObject<string, number>("hello", 1);
+//
+// const mergedObj3 = mergeObject<string, number>("hello", 1);
 
 interface Lengthy {
   length: number;
@@ -60,7 +61,8 @@ function extractAndConvert<T extends object, U extends keyof T>(obj: T, key: U) 
 }
 
 // 오류
-extractAndConvert({}, "name");
+//
+// extractAndConvert({}, "name");
 
 class DataStorage<T> {
   private data: T[] = [];
@@ -102,3 +104,31 @@ objectStorage.addItem({ name: "hyoyoon2" });
 objectStorage.removeItem({ name: "hyoyoon" });
 
 console.log(objectStorage.getItems());
+
+interface CourseGoal {
+  title: string;
+  description: string;
+  completeUntil: Date;
+}
+
+function createCourseGoal1(title: string, description: string, completeUntil: Date) {
+  return { title, description, completeUntil };
+}
+
+function createCourseGoal2(title: string, description: string, completeUntil: Date): CourseGoal {
+  let CourseGoal: Partial<CourseGoal> = {}; // Partial은 나중에 CourseGoal이 될 수 있는 친구라는 걸 알려줌 모든 속성이 optional이 된다.
+  CourseGoal.title = title;
+  CourseGoal.description = description;
+  CourseGoal.completeUntil = completeUntil;
+  return CourseGoal as CourseGoal;
+}
+
+// Readonly를 사용하여 쓰기를 방지
+const GenericNames: Readonly<string[]> = ["hyoyoon", "hyoyoon1"];
+
+// 오류
+//
+// GenericNames.push("hyoyoon2");
+
+// 다른 유틸리티 타입
+// https://www.typescriptlang.org/docs/handbook/utility-types.html
